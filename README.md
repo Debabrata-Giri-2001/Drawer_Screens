@@ -2,6 +2,8 @@
 
 This repository contains the DrawerScreens component, which is a part of a React Native mobile application. The DrawerScreens component serves as the main navigation structure for the app, providing a customizable drawer navigation menu with dropdown submenus.
 
+## src :- Drawer Screens one
+## srcone :- Drawer Screens Two
 ### Features
 - Drawer Navigation: Utilizes the @react-navigation/drawer library to create a responsive and user-friendly drawer navigation menu.
 
@@ -13,7 +15,7 @@ This repository contains the DrawerScreens component, which is a part of a React
 
 ### Clone this repository:
 
-``` ```
+```git clone https://github.com/Debabrata-Giri-2001/Drawer_Screens.git ```
 
 
 ## Run for code

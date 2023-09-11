@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React, {useReducer, useRef} from 'react';
+import React, {useReducer, useRef, useState} from 'react';
 import {
   DrawerContentScrollView,
   useDrawerProgress,
@@ -23,6 +23,7 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import {Categories} from '../private';
 
 /* Drawer Item list Home,MyInbox,etc... */
 const DrawerItem: React.FC<DrawerItemProps> = ({
@@ -134,26 +135,21 @@ const CustomDrawer = (props: any) => {
       transform: [{translateX}],
     };
   });
-  const viewStyles2 = (type: string) => useAnimatedStyle(() => {
-    const val = type === 'top' ? -100 : 100;
-    const translateY = interpolate(
-      drawerProgress.value,
-      [0, 1],
-      [val, 0],
-    )
-    const opacity = interpolate(
-      drawerProgress.value,
-      [0, 1],
-      [0, 1],
-    )
-    return {
-      transform: [{ translateY }], opacity
-    }
-  })
+  const viewStyles2 = (type: string) =>
+    useAnimatedStyle(() => {
+      const val = type === 'top' ? -100 : 100;
+      const translateY = interpolate(drawerProgress.value, [0, 1], [val, 0]);
+      const opacity = interpolate(drawerProgress.value, [0, 1], [0, 1]);
+      return {
+        transform: [{translateY}],
+        opacity,
+      };
+    });
   return (
-    <View style={styles.container}>
+    <View style={[styles.container]}>
       {/* header */}
-      <Animated.View style={[styles.row, styles.view, styles.marginTop,viewStyles2('top')]}>
+      <Animated.View
+        style={[styles.row, styles.view, styles.marginTop, viewStyles2('top')]}>
         <View style={styles.iconContainer}>
           <Icon
             name={'cruelty-free'}
@@ -171,7 +167,7 @@ const CustomDrawer = (props: any) => {
         ref={scrollRef}
         {...props}
         style={[styles.marginVertical, viewStyles]}>
-        <View style={styles.view}>
+        <View style={[styles.view]}>
           {state.routes.map(
             (
               route: {key: string | number; name: any},
@@ -206,7 +202,9 @@ const CustomDrawer = (props: any) => {
               );
             },
           )}
+          <Categories />
         </View>
+      
         {/* <DrawerItemList {...props} /> */}
         {/* 2nd Menu */}
         <View style={[styles.view, styles.marginVertical]}>
@@ -246,7 +244,13 @@ const CustomDrawer = (props: any) => {
 
       {/* footer */}
       <TouchableOpacity onPress={fun}>
-        <Animated.View style={[styles.row, styles.view, styles.marginBottom,viewStyles2('bottom')]}>
+        <Animated.View
+          style={[
+            styles.row,
+            styles.view,
+            styles.marginBottom,
+            viewStyles2('bottom'),
+          ]}>
           <Image
             style={styles.profile}
             source={{

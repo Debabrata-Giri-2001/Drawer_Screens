@@ -2,7 +2,7 @@ import React from 'react'
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
 import { colors } from '../../constant/Colors'
 
-export default function DrawerScreen({ route, navigation }) {
+export default function DrawerScreen({  }) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor={colors.white} />

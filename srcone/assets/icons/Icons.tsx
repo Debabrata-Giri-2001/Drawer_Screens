@@ -4,8 +4,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 export const Icons = {
   MaterialIcons
 };
-
-const Icon = ({type, name, color, size = 24, style}) => {
+interface IconProps {
+  type: React.ComponentType<any>;
+  name: string;
+  color: string;
+  size?: number;
+  style?: object;
+}
+const Icon = ({type, name, color, size = 24, style}:IconProps) => {
   const fontSize = 24;
   const Tag = type;
   return (

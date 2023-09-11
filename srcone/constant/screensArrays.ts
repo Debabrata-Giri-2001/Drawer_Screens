@@ -12,9 +12,9 @@ export const ScreensArray = [
 ];
 
 export const ProjectsArray = [
-  { title: "Personal", icon: "person", color: colors.icon1, iconType: Icons.MaterialIcons },
-  { title: "travel", icon: "person", color: colors.icon2, iconType: Icons.MaterialIcons },
-  { title: "Business", icon: "person", color: colors.icon3, iconType: Icons.MaterialIcons },
+  { title: "Personal", icon: "format-list-bulleted", color: colors.icon1, iconType: Icons.MaterialIcons },
+  { title: "travel", icon: "format-list-bulleted", color: colors.icon2, iconType: Icons.MaterialIcons },
+  { title: "Business", icon: "format-list-bulleted", color: colors.icon3, iconType: Icons.MaterialIcons },
   { title: "Add", icon: "add", color: colors.icon4, iconType: Icons.MaterialIcons },
 ]
 

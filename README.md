@@ -26,3 +26,4 @@ Run the app on Android: yarn react-native run-android
 ```
 ## UI of this Application
 ![This is an alt text.](/src/assets/images/App_SC.jpg)
+![This is an alt text.](/srcone/assets/images/screenTwo.jpg)
